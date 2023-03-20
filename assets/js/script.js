@@ -2,6 +2,19 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  let timeBlocks = $('.time-block')
+
+  timeBlocks.addClass('past')
+
+  timeBlocks.each(function() {
+    let timeBlock = $(this)
+
+    // Check timeblock hour and if it is the current hour then add 'past' class to the timeBlock div
+    let hour = timeBlock.attr('id').split('-')
+    let date = day.js()
+
+    console.log(date.hour())
+  })
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
     // local storage. HINT: What does `this` reference in the click listener
@@ -21,3 +34,18 @@ $(function () {
     //
     // TODO: Add code to display the current date in the header of the page.
   });
+
+
+
+/* WHEN I open the planner
+*THEN the current day is displayed at the top of the calendar
+WHEN I scroll down
+*THEN I am presented with timeblocks for standard business hours
+WHEN I view the timeblocks for that day
+*THEN each timeblock is color coded to indicate whether it is in the past, present, or future
+WHEN I click into a timeblock
+*THEN I can enter an event
+WHEN I click the save button for that timeblock
+*THEN the text for that event is saved in local storage
+WHEN I refresh the page
+*THEN the saved events persist */
